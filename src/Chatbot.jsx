@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 import {
+  CheckCheck,
   CheckCheckIcon,
   EllipsisVertical,
   Paperclip,
@@ -124,8 +125,9 @@ export default function Chatbot() {
   };
 
   useEffect(() => {
-    messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
+    messagesEndRef.current?.scrollIntoView({ behavior: "smooth", block: "end" });
   }, [messages, finalMessage]);
+  
 
   return (
     <div
@@ -154,59 +156,53 @@ export default function Chatbot() {
         </div>
       </div>
 
-      <div className="flex-1 p-4 space-y-2 overflow-y-auto flex flex-col mt-20">
-        {messages.map((msg, index) => (
-          <motion.div
-            key={index}
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className={`flex ${
-              msg.sender === "user" ? "justify-end" : "justify-start"
-            }`}
-          >
-            {msg.sender === "bot" && msg.lastInSequence && (
-              <img
-                src="https://i.postimg.cc/dQ5Snwgj/02c8534f-8e47-4118-b2d7-e5e27276317b.jpg"
-                alt="Bot"
-                className="w-8 h-8 rounded-full mr-2"
-              />
-            )}
-            {msg.sender === "bot" && !msg.lastInSequence ? (
+      <div className="flex-1 p-4 space-y-2 overflow-y-auto flex flex-col mt-[15%] scroll-mt-10">
+        {messages.map((msg, index) => {
+          return (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, x: msg.sender === "bot" ? -50 : 50 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.5, ease: "easeOut" }}
+              className={`flex relative ${
+                msg.sender === "user" ? "justify-end" : "justify-start"
+              }`}
+            >
+              {msg.sender === "bot" && msg.lastInSequence && (
+                <img
+                  src="https://i.postimg.cc/dQ5Snwgj/02c8534f-8e47-4118-b2d7-e5e27276317b.jpg"
+                  alt="Bot"
+                  className="w-8 h-8 rounded-full mr-2 absolute bottom-0"
+                />
+              )}
               <motion.div
-                initial={{ scale: 0.9 }}
-                animate={{ scale: 1 }}
-                transition={{ duration: 0.8 }}
-                className={`ms-10 max-w-xs p-2 rounded-lg text-sm shadow-md ${
+                initial={{ width: 0, height: 15 }}
+                animate={{ width: "auto", height: "auto" }}
+                transition={{ duration: 0.3, ease: "easeOut" }}
+                className={`p-2 rounded-lg text-sm shadow-md ${
                   msg.sender === "user"
                     ? "bg-[#dcf8c6] text-gray-800"
-                    : "bg-white text-gray-800"
-                } flex items-center gap-2`}
+                    : "bg-white text-gray-800 ms-10"
+                }`}
+                style={{ minWidth: "50px", overflow: "hidden" }}
               >
-                {msg.text}
+                <motion.span
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ delay: 0.6 }}
+                >
+                  {msg.text}
+                </motion.span>
                 {msg.sender === "user" && (
-                  <CheckCheckIcon className="mt-3 w-3 h-3 text-blue-700" />
+                  <span className="flex flex-row-reverse">
+                    <CheckCheck className="h-3 w-3 text-blue-600" />
+                  </span>
                 )}
               </motion.div>
-            ) : (
-              <motion.div
-                initial={{ scale: 0.9 }}
-                animate={{ scale: 1 }}
-                transition={{ duration: 0.8 }}
-                className={`max-w-xs p-2 rounded-lg text-sm shadow-md ${
-                  msg.sender === "user"
-                    ? "bg-[#dcf8c6] text-gray-800"
-                    : "bg-white text-gray-800"
-                } flex items-center gap-2`}
-              >
-                {msg.text}
-                {msg.sender === "user" && (
-                  <CheckCheckIcon className="mt-3 w-3 h-3 text-blue-700" />
-                )}
-              </motion.div>
-            )}
-          </motion.div>
-        ))}
+            </motion.div>
+          );
+        })}
+
         {isTyping && (
           <motion.div
             initial={{ opacity: 0 }}
@@ -263,7 +259,7 @@ export default function Chatbot() {
         )}
         {finalMessage && <CallToAction finalMessage={finalMessage} />}
 
-        <div ref={messagesEndRef} />
+        <div  ref={messagesEndRef} />
       </div>
     </div>
   );
