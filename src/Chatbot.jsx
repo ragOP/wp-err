@@ -160,7 +160,7 @@ export default function Chatbot() {
             key={index}
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
+            transition={{ duration: 0.8 }}
             className={`flex ${
               msg.sender === "user" ? "justify-end" : "justify-start"
             }`}
@@ -176,7 +176,7 @@ export default function Chatbot() {
               <motion.div
                 initial={{ scale: 0.9 }}
                 animate={{ scale: 1 }}
-                transition={{ duration: 0.3 }}
+                transition={{ duration: 0.8 }}
                 className={`ms-10 max-w-xs p-2 rounded-lg text-sm shadow-md ${
                   msg.sender === "user"
                     ? "bg-[#dcf8c6] text-gray-800"
@@ -192,7 +192,7 @@ export default function Chatbot() {
               <motion.div
                 initial={{ scale: 0.9 }}
                 animate={{ scale: 1 }}
-                transition={{ duration: 0.3 }}
+                transition={{ duration: 0.8 }}
                 className={`max-w-xs p-2 rounded-lg text-sm shadow-md ${
                   msg.sender === "user"
                     ? "bg-[#dcf8c6] text-gray-800"
@@ -211,7 +211,7 @@ export default function Chatbot() {
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ duration: 0.5 }}
+            transition={{ duration: 0.8 }}
             className="flex items-center gap-2"
           >
             <img
@@ -222,7 +222,7 @@ export default function Chatbot() {
             <motion.div
               initial={{ scale: 0.9 }}
               animate={{ scale: 1 }}
-              transition={{ duration: 0.3 }}
+              transition={{ duration: 0.5 }}
               className="max-w-xs p-2 rounded-lg text-sm bg-white text-gray-800 flex items-center gap-1"
             >
               <div className="w-2 h-2 bg-gray-500 rounded-full animate-bounce [animation-delay:-0.3s]"></div>

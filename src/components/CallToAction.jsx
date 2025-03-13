@@ -26,13 +26,13 @@ const CallToAction = ({ finalMessage }) => {
       className="flex flex-col items-center p-4"
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.5 }}
+      transition={{ duration: 0.8 }}
     >
       <motion.div
         className="bg-green-100 text-green-700 text-center p-3 rounded-md w-full max-w-md"
         initial={{ opacity: 0, y: -10 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.2, duration: 0.4 }}
+        transition={{ delay: 0.2, duration: 0.6 }}
       >
         <p className="font-semibold">
           Tap on the button below to make a quick call & that's it. You'll be
@@ -51,7 +51,7 @@ const CallToAction = ({ finalMessage }) => {
         className="mt-4 text-gray-600 text-center text-sm w-full max-w-md"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ delay: 0.4, duration: 0.5 }}
+        transition={{ delay: 0.4, duration: 0.8 }}
       >
         Due to high call volume, your official agent is waiting for only{" "}
         <span className="font-bold">3 minutes</span>, then your spot will not be
