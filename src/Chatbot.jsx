@@ -135,7 +135,7 @@ export default function Chatbot() {
           "url('https://user-images.githubusercontent.com/15075759/28719144-86dc0f70-73b1-11e7-911d-60d70fcded21.png')",
       }}
     >
-      <div className="bg-[#005e54] text-white p-4 flex items-center gap-2 shadow-md sticky top-0 right-0 left-0 z-10 h-20">
+      <div className="bg-[#005e54] text-white p-4 flex items-center gap-2 shadow-md sticky top-0 right-0 left-0 z-10 h-16">
         <img
           src="https://i.postimg.cc/dQ5Snwgj/02c8534f-8e47-4118-b2d7-e5e27276317b.jpg"
           alt="Psychic Master"
