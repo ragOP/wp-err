@@ -154,7 +154,7 @@ export default function Chatbot() {
         </div>
       </div>
 
-      <div className="flex-1 p-4 space-y-2 overflow-y-auto flex flex-col">
+      <div className="flex-1 p-4 space-y-2 overflow-y-auto flex flex-col mt-16">
         {messages.map((msg, index) => (
           <motion.div
             key={index}
