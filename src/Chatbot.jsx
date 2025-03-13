@@ -156,7 +156,7 @@ export default function Chatbot() {
         </div>
       </div>
 
-      <div className="flex-1 p-4 space-y-2 overflow-y-auto flex flex-col mt-[10%] scroll-mt-10">
+      <div className="flex-1 p-4 space-y-2 overflow-y-auto flex flex-col mt-[5%] scroll-mt-10">
         {messages.map((msg, index) => {
           return (
             <motion.div
