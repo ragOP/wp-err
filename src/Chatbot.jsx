@@ -1,9 +1,9 @@
 import { useState, useEffect, useRef } from "react";
 import { motion } from "framer-motion";
-import agent from "../src/assets/pic.png"
+import agent from "../src/assets/pic.png";
+import tick from "../src/assets/tick.png";
 import {
   CheckCheck,
-  CheckCheckIcon,
   EllipsisVertical,
   Paperclip,
   Phone,
@@ -21,6 +21,10 @@ export default function Chatbot() {
   const [finalMessage, setFinalMessage] = useState(false);
   const messagesEndRef = useRef(null);
 
+  const getFormattedTime = (timeString) => {
+    return timeString.split(" ")[0].split(":").slice(0, 2).join(":");
+  };
+
   useEffect(() => {
     const initialMessages = [
       {
@@ -30,11 +34,13 @@ export default function Chatbot() {
       {
         text: "Emily this side, and I've got great news about a special Final Expense Benefit that could save you serious cash! 💰",
         sender: "bot",
+        time: new Date().toTimeString(),
       },
       {
         text: "Want to see if you qualify for the $40,000 Final Expense Benefit? It only takes 2 minutes! Tap 'Yes' to get started! 👇",
         sender: "bot",
         options: ["Yes! Show me how to claim"],
+        time: new Date().toTimeString(),
       },
     ];
     addMessagesWithDelay(initialMessages);
@@ -47,7 +53,11 @@ export default function Chatbot() {
       setTimeout(() => {
         setMessages((prev) => [
           ...prev,
-          { ...response, lastInSequence: index === botResponses.length - 1 },
+          {
+            ...response,
+            time: new Date().toTimeString(),
+            lastInSequence: index === botResponses.length - 1,
+          },
         ]);
         if (index === botResponses.length - 1) {
           setIsTyping(false);
@@ -60,9 +70,15 @@ export default function Chatbot() {
 
   const handleOptionClick = (option) => {
     if (option === "Yes! Show me how to claim") {
-      setMessages((prev) => [...prev, { text: "Yes", sender: "user" }]);
+      setMessages((prev) => [
+        ...prev,
+        { text: "Yes", sender: "user", time: new Date().toTimeString() },
+      ]);
     } else {
-      setMessages((prev) => [...prev, { text: option, sender: "user" }]);
+      setMessages((prev) => [
+        ...prev,
+        { text: option, sender: "user", time: new Date().toTimeString() },
+      ]);
     }
     setShowInput(false);
     setCurrentOptions([]);
@@ -126,9 +142,11 @@ export default function Chatbot() {
   };
 
   useEffect(() => {
-    messagesEndRef.current?.scrollIntoView({ behavior: "smooth", block: "end" });
+    messagesEndRef.current?.scrollIntoView({
+      behavior: "smooth",
+      block: "end",
+    });
   }, [messages, finalMessage]);
-  
 
   return (
     <div
@@ -138,7 +156,7 @@ export default function Chatbot() {
           "url('https://user-images.githubusercontent.com/15075759/28719144-86dc0f70-73b1-11e7-911d-60d70fcded21.png')",
       }}
     >
-      <div className="bg-[#005e54] text-white p-4 flex items-center gap-2 shadow-md sticky top-0 right-0 left-0 z-10 h-16">
+      <div className="bg-[#005e54] text-white p-4 flex items-center gap-2 shadow-md sticky top-0 right-0 left-0 z-10 h-20">
         <img
           src={agent}
           alt="Psychic Master"
@@ -146,13 +164,16 @@ export default function Chatbot() {
         />
         <div className="flex items-center justify-between w-full">
           <div>
-            <p className="font-bold">Burial Protection Helpline</p>
+            <div className="flex items-center gap-3">
+              <p className="font-bold text-sm">Burial Protection Helpline</p>
+              <img src={tick} className="w-4 h-4" />
+            </div>
             <p className="text-sm italic">online</p>
           </div>
-          <div className="flex items-center gap-6">
-            <Phone className="w-6 h-6 text-white" />
-            <Paperclip className="w-6 h-6 text-white" />
-            <EllipsisVertical className="w-6 h-6 text-white" />
+          <div className="flex items-center gap-3">
+            <Phone className="w-5 h-5 text-white" />
+            <Paperclip className="w-5 h-5 text-white" />
+            <EllipsisVertical className="w-5 h-5 text-white" />
           </div>
         </div>
       </div>
@@ -185,7 +206,7 @@ export default function Chatbot() {
                     ? "bg-[#dcf8c6] text-gray-800"
                     : "bg-white text-gray-800 ms-10"
                 }`}
-                style={{ minWidth: "50px", overflow: "hidden" }}
+                style={{ minWidth: "70px", overflow: "hidden" }}
               >
                 <motion.span
                   initial={{ opacity: 0 }}
@@ -194,11 +215,15 @@ export default function Chatbot() {
                 >
                   {msg.text}
                 </motion.span>
-                {msg.sender === "user" && (
-                  <span className="flex flex-row-reverse">
+
+                <span className="flex flex-row-reverse gap-1 items-center">
+                  {msg.sender === "user" && (
                     <CheckCheck className="h-3 w-3 text-blue-600" />
+                  )}
+                  <span className="text-[10px] text-gray-400">
+                    {getFormattedTime(msg.time)}
                   </span>
-                )}
+                </span>
               </motion.div>
             </motion.div>
           );
@@ -211,11 +236,7 @@ export default function Chatbot() {
             transition={{ duration: 0.8 }}
             className="flex items-center gap-2"
           >
-            <img
-              src={agent}
-              alt="Bot"
-              className="w-8 h-8 rounded-full"
-            />
+            <img src={agent} alt="Bot" className="w-8 h-8 rounded-full" />
             <motion.div
               initial={{ scale: 0.9 }}
               animate={{ scale: 1 }}
@@ -260,7 +281,7 @@ export default function Chatbot() {
         )}
         {finalMessage && <CallToAction finalMessage={finalMessage} />}
 
-        <div  ref={messagesEndRef} />
+        <div ref={messagesEndRef} />
       </div>
     </div>
   );
