@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 import { motion } from "framer-motion";
+import agent from "../src/assets/pic.png"
 import {
   CheckCheck,
   CheckCheckIcon,
@@ -139,13 +140,13 @@ export default function Chatbot() {
     >
       <div className="bg-[#005e54] text-white p-4 flex items-center gap-2 shadow-md sticky top-0 right-0 left-0 z-10 h-16">
         <img
-          src="https://i.postimg.cc/dQ5Snwgj/02c8534f-8e47-4118-b2d7-e5e27276317b.jpg"
+          src={agent}
           alt="Psychic Master"
           className="w-10 h-10 rounded-full"
         />
         <div className="flex items-center justify-between w-full">
           <div>
-            <p className="font-bold">Psychic Master</p>
+            <p className="font-bold">Emily</p>
             <p className="text-sm italic">online</p>
           </div>
           <div className="flex items-center gap-6">
@@ -170,7 +171,7 @@ export default function Chatbot() {
             >
               {msg.sender === "bot" && msg.lastInSequence && (
                 <img
-                  src="https://i.postimg.cc/dQ5Snwgj/02c8534f-8e47-4118-b2d7-e5e27276317b.jpg"
+                  src={agent}
                   alt="Bot"
                   className="w-8 h-8 rounded-full mr-2 absolute bottom-0"
                 />
@@ -211,7 +212,7 @@ export default function Chatbot() {
             className="flex items-center gap-2"
           >
             <img
-              src="https://i.postimg.cc/dQ5Snwgj/02c8534f-8e47-4118-b2d7-e5e27276317b.jpg"
+              src={agent}
               alt="Bot"
               className="w-8 h-8 rounded-full"
             />
