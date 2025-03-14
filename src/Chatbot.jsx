@@ -11,7 +11,6 @@ import {
   SendHorizontalIcon,
 } from "lucide-react";
 import CallToAction from "./components/CallToAction";
-import ChatBanner from "./components/ChatBanner";
 
 export default function Chatbot() {
   const [messages, setMessages] = useState([]);
@@ -143,11 +142,15 @@ export default function Chatbot() {
   };
 
   useEffect(() => {
-    messagesEndRef.current?.scrollIntoView({
-      behavior: "smooth",
-      block: "end",
-    });
+    if (messagesEndRef.current) {
+      messagesEndRef.current.scrollIntoView({
+        behavior: "smooth",
+        block: "end",
+        inline: "nearest",
+      });
+    }
   }, [messages, finalMessage]);
+   
 
   return (
     <div
@@ -180,9 +183,6 @@ export default function Chatbot() {
       </div>
 
       <div className="flex-1 p-4 space-y-2 overflow-y-auto flex flex-col scroll-mt-10 mt-[1%]">
-      <div>
-        <ChatBanner />
-      </div>
         {messages.map((msg, index) => {
           return (
             <motion.div
@@ -205,7 +205,7 @@ export default function Chatbot() {
                 initial={{ width: 0, height: 15 }}
                 animate={{ width: "auto", height: "auto" }}
                 transition={{ duration: 0.3, ease: "easeOut" }}
-                className={`p-2 rounded-lg text-sm shadow-md ${
+                className={`p-2 rounded-lg text-base shadow-md ${
                   msg.sender === "user"
                     ? "bg-[#dcf8c6] text-gray-800"
                     : "bg-white text-gray-800 ms-10"
@@ -275,7 +275,7 @@ export default function Chatbot() {
             {currentOptions.map((option, i) => (
               <button
                 key={i}
-                className="px-6 py-2 bg-[#005e54] text-white rounded-full text-sm"
+                className="px-6 py-3 bg-[#005e54] text-white rounded-full text-lg"
                 onClick={() => handleOptionClick(option)}
               >
                 {option}
