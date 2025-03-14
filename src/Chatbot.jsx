@@ -2,6 +2,7 @@ import { useState, useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 import agent from "../src/assets/pic.png";
 import tick from "../src/assets/tick.png";
+import deliver from "../src/assets/delivered.svg"
 import {
   CheckCheck,
   EllipsisVertical,
@@ -222,7 +223,7 @@ export default function Chatbot() {
 
                 <span className="flex flex-row-reverse gap-1 items-center">
                   {msg.sender === "user" && (
-                    <CheckCheck className="h-3 w-3 text-blue-600" />
+                    <img src={deliver} className="h-4 w-4" />
                   )}
                   <span className="text-[10px] text-gray-400">
                     {getFormattedTime(msg.time)}
