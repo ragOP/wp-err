@@ -11,6 +11,7 @@ import {
   SendHorizontalIcon,
 } from "lucide-react";
 import CallToAction from "./components/CallToAction";
+import ChatBanner from "./components/ChatBanner";
 
 export default function Chatbot() {
   const [messages, setMessages] = useState([]);
@@ -178,7 +179,10 @@ export default function Chatbot() {
         </div>
       </div>
 
-      <div className="flex-1 p-4 space-y-2 overflow-y-auto flex flex-col mt-[5%] scroll-mt-10">
+      <div className="flex-1 p-4 space-y-2 overflow-y-auto flex flex-col scroll-mt-10 mt-[1%]">
+      <div>
+        <ChatBanner />
+      </div>
         {messages.map((msg, index) => {
           return (
             <motion.div
