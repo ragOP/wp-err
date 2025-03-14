@@ -146,7 +146,7 @@ export default function Chatbot() {
         />
         <div className="flex items-center justify-between w-full">
           <div>
-            <p className="font-bold">Emily-Burial Protection Helpline</p>
+            <p className="font-bold">Burial Protection Helpline</p>
             <p className="text-sm italic">online</p>
           </div>
           <div className="flex items-center gap-6">
