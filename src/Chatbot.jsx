@@ -145,10 +145,17 @@ export default function Chatbot() {
   useEffect(() => {
     if (messagesEndRef.current) {
       const container = messagesEndRef.current.parentElement;
-      container.scrollTo({
-        top: container.scrollHeight - container.clientHeight,
-        behavior: "smooth",
-      });
+      if(finalMessage){
+        container.scrollTo({
+          top: container.scrollHeight - container.clientHeight - 208,
+          behavior: "smooth",
+        });
+      }else{
+        container.scrollTo({
+          top: container.scrollHeight - container.clientHeight,
+          behavior: "smooth",
+        });
+      }
     }
   }, [messages, finalMessage, isTyping]);
   
@@ -183,7 +190,7 @@ export default function Chatbot() {
         </div>
       </div>
 
-      <div className="flex-1 p-4 space-y-2 overflow-y-auto flex flex-col mt-[1%] pb-40">
+      <div className="flex-1 p-4 space-y-2 overflow-y-auto flex flex-col mt-[1%] pb-52">
         {messages.map((msg, index) => {
           return (
             <motion.div
