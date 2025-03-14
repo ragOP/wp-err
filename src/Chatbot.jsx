@@ -245,7 +245,7 @@ export default function Chatbot() {
           </div>
         )}
         {currentOptions.length > 0 && (
-          <div className="flex flex-wrap gap-2 mt-2 items-center justify-end">
+          <div className="flex flex-wrap gap-2 mt-2 items-center justify-start ms-10">
             {currentOptions.map((option, i) => (
               <button
                 key={i}
