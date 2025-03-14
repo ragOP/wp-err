@@ -147,7 +147,7 @@ export default function Chatbot() {
       const container = messagesEndRef.current.parentElement;
       if(finalMessage){
         container.scrollTo({
-          top: container.scrollHeight - container.clientHeight - 208,
+          top: container.scrollHeight - container.clientHeight - 100,
           behavior: "smooth",
         });
       }else{
