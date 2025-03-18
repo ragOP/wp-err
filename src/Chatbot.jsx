@@ -70,7 +70,7 @@ export default function Chatbot() {
   };
 
   const handleOptionClick = (option) => {
-    if (option === "Yes! Show me how to claim") {
+    if (option === "👉 Yes! Show me how to claim!") {
       setMessages((prev) => [
         ...prev,
         { text: "Yes", sender: "user", time: new Date().toTimeString() },
