@@ -40,12 +40,12 @@ const CallToAction = ({ finalMessage }) => {
         </p>
       </motion.div>
       <motion.a
-        href="tel:+18338610342"
+        href="tel:+13214858035"
         className="mt-4 bg-green-500 text-white text-lg font-bold py-3 px-6 rounded-md shadow-md w-full max-w-md text-center transition hover:bg-green-600"
         whileHover={{ scale: 1.05 }}
         whileTap={{ scale: 0.95 }}
       >
-        CALL (833)-8610-342
+        CALL (321)-4858-035
       </motion.a>
       <motion.p
         className="mt-4 text-gray-600 text-center text-sm w-full max-w-md"
