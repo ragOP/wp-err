@@ -213,7 +213,7 @@ export default function Chatbot() {
                 initial={{ width: 0, height: 15 }}
                 animate={{ width: "auto", height: "auto" }}
                 transition={{ duration: 0.3, ease: "easeOut" }}
-                className={`p-2 rounded-lg text-base shadow-md ${
+                className={`pt-2 px-2 pb-0 rounded-lg text-base shadow-md ${
                   msg.sender === "user"
                     ? "bg-[#dcf8c6] text-gray-800"
                     : "bg-white text-gray-800 ms-10"
