@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 import agent from "../src/assets/pic.png";
-import tick from "../src/assets/tick.png";
+import tick from "../src/assets/tick2.png";
 import deliver from "../src/assets/delivered.svg"
 import {
   CheckCheck,
@@ -38,9 +38,9 @@ export default function Chatbot() {
         time: new Date().toTimeString(),
       },
       {
-        text: "Want to see if you qualify for the $40,000 Final Expense Benefit? It only takes 2 minutes! Tap 'Yes' to get started! 👇",
+        text: "Want to see if you qualify for the $40,000 Final Expense Benefit? It only takes 2 minutes! Tap 'Yes' to get started! ⬇️",
         sender: "bot",
-        options: ["Yes! Show me how to claim"],
+        options: ["👉 Yes! Show me how to claim!"],
         time: new Date().toTimeString(),
       },
     ];
@@ -178,9 +178,9 @@ export default function Chatbot() {
           <div>
             <div className="flex items-center gap-3">
               <p className="font-bold text-sm">Burial Protection Helpline</p>
-              <img src={tick} className="w-4 h-4" />
+              <img src={tick} className="w-4 h-4"  style={{marginLeft:"-6px"}}/>
             </div>
-            <p className="text-sm italic">online</p>
+            <p className="text-sm ">online</p>
           </div>
           <div className="flex items-center gap-3">
             <Phone className="w-5 h-5 text-white" />
