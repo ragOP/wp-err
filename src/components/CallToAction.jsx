@@ -47,11 +47,11 @@ const CallToAction = ({ finalMessage }) => {
         whileTap={{ scale: 0.95 }}
         animate={{
           boxShadow: [
-            "0px 0px 20px 5px rgba(34, 197, 94, 1)",
-            "0px 0px 40px 5px rgba(34, 197, 94, 0.9)",
-            "0px 0px 60px 5px rgba(34, 197, 94, 0.8)",
-            "0px 0px 40px 5px rgba(34, 197, 94, 0.9)",
-            "0px 0px 20px 5px rgba(34, 197, 94, 1)",
+            "0px 0px 20px 2px rgba(34, 197, 94, 1)",
+            "0px 0px 40px 2px rgba(34, 197, 94, 0.9)",
+            "0px 0px 60px 2px rgba(34, 197, 94, 0.8)",
+            "0px 0px 40px 2px rgba(34, 197, 94, 0.9)",
+            "0px 0px 20px 2px rgba(34, 197, 94, 1)",
           ],
         }}
         transition={{ repeat: Infinity, duration: 1.8, ease: "easeInOut" }}
