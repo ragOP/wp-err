@@ -33,12 +33,12 @@ export default function Chatbot() {
         sender: "bot",
       },
       {
-        text: "Emily this side, and I've got great news about a special Final Expense Benefit that could save you serious cash! 💰",
+        text: "Emily this side. Let’s find out if you qualify for the $40,000 Burial Protection Plan — it’s quick and only takes 2 minutes!",
         sender: "bot",
         time: new Date().toTimeString(),
       },
       {
-        text: "Want to see if you qualify for the $40,000 Final Expense Benefit? It only takes 2 minutes! Tap 'Yes' to get started! ⬇️",
+        text: "Tap 'Yes' to get started! ⬇️",
         sender: "bot",
         options: ["👉 Yes! Show me how to claim!"],
         time: new Date().toTimeString(),
@@ -115,7 +115,7 @@ export default function Chatbot() {
           sender: "bot",
         },
         {
-          text: "Based on what you've told me, you might qualify for the $40,000 Final Expense Benefit! Once approved, you'll never have to pay it back 💸",
+          text: "Based on what you've told me, you’re eligible for the $40,000 Burial Protection Plan!",
           sender: "bot",
         },
       ];
