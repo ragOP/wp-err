@@ -85,7 +85,7 @@ export default function Chatbot() {
     setCurrentOptions([]);
     let botResponses = [];
 
-    if (option === "Yes! Show me how to claim") {
+    if (option === "👉 Yes! Show me how to claim!") {
       botResponses = [
         {
           text: "Awesome! Let's get you the benefit ASAP. I just need to ask you a couple of quick questions.",
