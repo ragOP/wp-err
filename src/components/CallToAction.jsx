@@ -36,25 +36,16 @@ const CallToAction = ({ finalMessage }) => {
       >
         <p className="font-semibold">
           Tap on the button below to make a quick call & that's it. You'll be
-          qualified on the call by a licensed agent in minutes.
+          qualified on the call by a licensed agent in minutes 👇
         </p>
       </motion.div>
 
       <motion.a
         href="tel:+13214858035"
         className="mt-4 bg-green-500 text-white text-lg font-bold py-3 px-6 rounded-md w-full max-w-md text-center transition hover:bg-green-600 relative"
+        style={{ height: "120%", fontSize: "140%" }}
         whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 0.95 }}
-        animate={{
-          boxShadow: [
-            "0px 0px 20px 2px rgba(34, 197, 94, 1)",
-            "0px 0px 40px 2px rgba(34, 197, 94, 0.9)",
-            "0px 0px 60px 2px rgba(34, 197, 94, 0.8)",
-            "0px 0px 40px 2px rgba(34, 197, 94, 0.9)",
-            "0px 0px 20px 2px rgba(34, 197, 94, 1)",
-          ],
-        }}
-        transition={{ repeat: Infinity, duration: 1.8, ease: "easeInOut" }}
       >
         CALL (321)-4858-035
       </motion.a>
