@@ -39,14 +39,26 @@ const CallToAction = ({ finalMessage }) => {
           qualified on the call by a licensed agent in minutes.
         </p>
       </motion.div>
+
       <motion.a
         href="tel:+13214858035"
-        className="mt-4 bg-green-500 text-white text-lg font-bold py-3 px-6 rounded-md shadow-md w-full max-w-md text-center transition hover:bg-green-600"
-        whileHover={{ scale: 1.05 }}
+        className="mt-4 bg-green-500 text-white text-lg font-bold py-3 px-6 rounded-md w-full max-w-md text-center transition hover:bg-green-600 relative"
+        whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 0.95 }}
+        animate={{
+          boxShadow: [
+            "0px 0px 20px 5px rgba(34, 197, 94, 1)",
+            "0px 0px 40px 5px rgba(34, 197, 94, 0.9)",
+            "0px 0px 60px 5px rgba(34, 197, 94, 0.8)",
+            "0px 0px 40px 5px rgba(34, 197, 94, 0.9)",
+            "0px 0px 20px 5px rgba(34, 197, 94, 1)",
+          ],
+        }}
+        transition={{ repeat: Infinity, duration: 1.8, ease: "easeInOut" }}
       >
         CALL (321)-4858-035
       </motion.a>
+
       <motion.p
         className="mt-4 text-gray-600 text-center text-sm w-full max-w-md"
         initial={{ opacity: 0 }}
@@ -57,6 +69,7 @@ const CallToAction = ({ finalMessage }) => {
         <span className="font-bold">3 minutes</span>, then your spot will not be
         reserved.
       </motion.p>
+
       <motion.p
         className="mt-2 text-red-500 font-bold text-lg"
         animate={{ scale: [1, 1.2, 1] }}
