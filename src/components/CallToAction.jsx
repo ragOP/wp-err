@@ -47,7 +47,7 @@ const CallToAction = ({ finalMessage }) => {
         whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 0.95 }}
       >
-        CALL (183)-366-8513
+        CALL (833)-366-8513
       </motion.a>
 
       <motion.p
