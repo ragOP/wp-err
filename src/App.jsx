@@ -1,10 +1,15 @@
-import React from 'react'
-import Chatbot from './Chatbot'
+import React from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import Chatbot from './Chatbot';
 
 const App = () => {
   return (
-    <Chatbot />
-  )
-}
+    <Router>
+      <Routes>
+        <Route path="/engsf1" element={<Chatbot />} />
+      </Routes>
+    </Router>
+  );
+};
 
-export default App
+export default App;
