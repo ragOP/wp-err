@@ -105,10 +105,19 @@ export default function Chatbot() {
         {
           text: "Do you live in the United States?",
           sender: "bot",
+          options: ["Yes ", "No "],
+        },
+      ];
+    }
+    else if (option === "Yes " || option === "No ") {
+      botResponses = [
+        {
+          text: "Do you make less than $80,000 per year?",
+          sender: "bot",
           options: ["Yes", "No"],
         },
       ];
-    } else if (option === "Yes" || option === "No") {
+    }else if (option === "Yes" || option === "No") {
       botResponses = [
         {
           text: "🎉 Fantastic news! You're one step away from securing your benefit",
