@@ -33,7 +33,7 @@ export default function Chatbot() {
         sender: "bot",
       },
       {
-        text: "Emily this side. Let’s find out if you qualify for the $40,000 Burial Protection Plan — it’s quick and only takes 2 minutes!",
+        text: "Emily this side. Let’s find out if you qualify for the $5800 Spending Allowance — it’s quick and only takes 2 minutes!",
         sender: "bot",
         time: new Date().toTimeString(),
       },
@@ -94,12 +94,12 @@ export default function Chatbot() {
         {
           text: "Are you over the age of 50?",
           sender: "bot",
-          options: ["Yes! I am over 50 years old", "No, I am 49 or younger"],
+          options: ["Yes! I am over 18 years old", "No, I am 17 or younger"],
         },
       ];
     } else if (
-      option === "Yes! I am over 50 years old" ||
-      option === "No, I am 49 or younger"
+      option === "Yes! I am over 18 years old" ||
+      option === "No, I am 17 or younger"
     ) {
       botResponses = [
         {
@@ -111,11 +111,11 @@ export default function Chatbot() {
     } else if (option === "Yes" || option === "No") {
       botResponses = [
         {
-          text: "🎉 Fantastic news! You're one step closer to securing your benefit",
+          text: "🎉 Fantastic news! You're one step away from securing your benefit",
           sender: "bot",
         },
         {
-          text: "Based on what you've told me, you’re eligible for the $40,000 Burial Protection Plan!",
+          text: "Based on what you've told me, you’re eligible for the $5800 Spending Allowance!",
           sender: "bot",
         },
       ];
