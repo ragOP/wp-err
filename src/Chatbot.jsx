@@ -92,7 +92,7 @@ export default function Chatbot() {
           sender: "bot",
         },
         {
-          text: "Are you over the age of 50?",
+          text: "Are you over the age of 18?",
           sender: "bot",
           options: ["Yes! I am over 18 years old", "No, I am 17 or younger"],
         },
