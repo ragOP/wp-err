@@ -29,18 +29,18 @@ export default function Chatbot() {
   useEffect(() => {
     const initialMessages = [
       {
-        text: "Hey there! 👋",
+        text: "¡Hola! 👋",
         sender: "bot",
       },
       {
-        text: "Emily this side. Let’s find out if you qualify for the $5800 Spending Allowance — it’s quick and only takes 2 minutes!",
+        text: "Emily por aquí. Vamos a ver si calificas para el Plan de Seguro de Salud Gratis — es rápido y solo toma 2 minutos.",
         sender: "bot",
         time: new Date().toTimeString(),
       },
       {
-        text: "Tap 'Yes' to get started! ⬇️",
+        text: "Toca ‘Sí’ para comenzar ⬇️",
         sender: "bot",
-        options: ["👉 Yes! Show me how to claim!"],
+        options: ["¡Sí! Quiero reclamar"],
         time: new Date().toTimeString(),
       },
     ];
@@ -70,7 +70,7 @@ export default function Chatbot() {
   };
 
   const handleOptionClick = (option) => {
-    if (option === "👉 Yes! Show me how to claim!") {
+    if (option === "¡Sí! Quiero reclamar") {
       setMessages((prev) => [
         ...prev,
         { text: "Yes", sender: "user", time: new Date().toTimeString() },
@@ -85,7 +85,7 @@ export default function Chatbot() {
     setCurrentOptions([]);
     let botResponses = [];
 
-    if (option === "👉 Yes! Show me how to claim!") {
+    if (option === "¡Sí! Quiero reclamar") {
       botResponses = [
         {
           text: "Awesome! Let's get you the benefit ASAP. I just need to ask you a couple of quick questions.",
@@ -186,7 +186,7 @@ export default function Chatbot() {
         <div className="flex items-center justify-between w-full">
           <div>
             <div className="flex items-center gap-3">
-              <p className="font-bold text-sm">Live Benefit Helpline</p>
+              <p className="font-bold text-sm">Plan Salud Gratis</p>
               <img src={tick} className="w-4 h-4"  style={{marginLeft:"-6px"}}/>
             </div>
             <p className="text-sm ">online</p>
