@@ -92,39 +92,39 @@ export default function Chatbot() {
           sender: "bot",
         },
         {
-          text: "Are you over the age of 18?",
+          text: "¿Tienes más de 18 años?",
           sender: "bot",
-          options: ["Yes! I am over 18 years old", "No, I am 17 or younger"],
+          options: ["Sí, tengo más de 18 años", "No, tengo 17 o menos"],
         },
       ];
     } else if (
-      option === "Yes! I am over 18 years old" ||
-      option === "No, I am 17 or younger"
+      option === "Sí, tengo más de 18 años" ||
+      option === "No, tengo 17 o menos"
     ) {
       botResponses = [
         {
-          text: "Do you live in the United States?",
+          text: "¿Vives en los Estados Unidos?",
           sender: "bot",
-          options: ["Yes ", "No "],
+          options: ["Sí ", "No "],
         },
       ];
     }
-    else if (option === "Yes " || option === "No ") {
+    else if (option === "Sí " || option === "No ") {
       botResponses = [
         {
-          text: "Do you make less than $80,000 per year?",
+          text: "¿Ganas menos de $80,000 al año?",
           sender: "bot",
-          options: ["Yes", "No"],
+          options: ["Sí", "No"],
         },
       ];
-    }else if (option === "Yes" || option === "No") {
+    }else if (option === "Sí" || option === "No") {
       botResponses = [
         {
-          text: "🎉 Fantastic news! You're one step away from securing your benefit",
+          text: "🎉 ¡Fantásticas noticias! Estás a un paso de asegurar tu beneficio",
           sender: "bot",
         },
         {
-          text: "Based on what you've told me, you’re eligible for the $5800 Spending Allowance!",
+          text: "¡Según lo que me has contado, eres elegible para el Plan de Seguro de Salud Gratis!",
           sender: "bot",
         },
       ];
