@@ -35,8 +35,7 @@ const CallToAction = ({ finalMessage }) => {
         transition={{ delay: 0.2, duration: 0.6 }}
       >
         <p className="font-semibold">
-          Tap on the button below to make a quick call & that's it. You'll be
-          qualified on the call by a licensed agent in minutes 👇
+         Toca el botón de abajo para hacer una llamada rápida y listo. Un agente con licencia te calificará en minutos 👇
         </p>
       </motion.div>
 
@@ -56,9 +55,8 @@ const CallToAction = ({ finalMessage }) => {
         animate={{ opacity: 1 }}
         transition={{ delay: 0.4, duration: 0.8 }}
       >
-        Due to high call volume, your official agent is waiting for only{" "}
-        <span className="font-bold">3 minutes</span>, then your spot will not be
-        reserved.
+Debido al alto volumen de llamadas, tu agente oficial solo esperará <span className="font-bold">3 minutos.</span> Después, tu lugar ya no estará reservado.
+
       </motion.p>
 
       <motion.p
