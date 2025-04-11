@@ -33,7 +33,7 @@ export default function Chatbot() {
         sender: "bot",
       },
       {
-        text: "Emily por aquí. Vamos a ver si calificas para el Subsidio de Gastos de $5800 — es rápido y solo toma 2 minutos.Toca ‘Sí’ para comenzar.",
+        text: "Emily por aquí. Vamos a ver si calificas para el Subsidio de Gastos de $5800 — es rápido y solo toma 2 minutos.",
         sender: "bot",
         time: new Date().toTimeString(),
       },
