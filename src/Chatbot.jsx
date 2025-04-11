@@ -40,7 +40,7 @@ export default function Chatbot() {
       {
         text: "Toca ‘Sí’ para comenzar ⬇️",
         sender: "bot",
-        options: ["¡Sí! Quiero reclamar"],
+        options: ["¡Sí! Quiero reclamar 👉"],
         time: new Date().toTimeString(),
       },
     ];
@@ -70,7 +70,7 @@ export default function Chatbot() {
   };
 
   const handleOptionClick = (option) => {
-    if (option === "¡Sí! Quiero reclamar") {
+    if (option === "¡Sí! Quiero reclamar 👉") {
       setMessages((prev) => [
         ...prev,
         { text: "Yes", sender: "user", time: new Date().toTimeString() },
@@ -85,7 +85,7 @@ export default function Chatbot() {
     setCurrentOptions([]);
     let botResponses = [];
 
-    if (option === "¡Sí! Quiero reclamar") {
+    if (option === "¡Sí! Quiero reclamar 👉") {
       botResponses = [
         {
           text: "¡Genial! Vamos a conseguirte el beneficio lo antes posible. Solo necesito hacerte un par de preguntas rápidas.",
