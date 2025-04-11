@@ -88,7 +88,7 @@ export default function Chatbot() {
     if (option === "¡Sí! Quiero reclamar") {
       botResponses = [
         {
-          text: "Awesome! Let's get you the benefit ASAP. I just need to ask you a couple of quick questions.",
+          text: "¡Genial! Te daremos el beneficio lo antes posible. Solo necesito hacerte un par de preguntas rápidas.",
           sender: "bot",
         },
         {
