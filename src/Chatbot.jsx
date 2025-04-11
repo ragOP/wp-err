@@ -33,7 +33,7 @@ export default function Chatbot() {
         sender: "bot",
       },
       {
-        text: "Emily por aquí. Vamos a ver si calificas para el Plan de Seguro de Salud Gratis — es rápido y solo toma 2 minutos.",
+        text: "Emily por aquí. Vamos a ver si calificas para el Subsidio de Gastos de $5800 — es rápido y solo toma 2 minutos.Toca ‘Sí’ para comenzar.",
         sender: "bot",
         time: new Date().toTimeString(),
       },
