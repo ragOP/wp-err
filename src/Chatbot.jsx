@@ -88,18 +88,18 @@ export default function Chatbot() {
     if (option === "¡Sí! Quiero reclamar") {
       botResponses = [
         {
-          text: "¡Genial! Te daremos el beneficio lo antes posible. Solo necesito hacerte un par de preguntas rápidas.",
+          text: "¡Genial! Vamos a conseguirte el beneficio lo antes posible. Solo necesito hacerte un par de preguntas rápidas.",
           sender: "bot",
         },
         {
-          text: "¡Genial! Vamos a conseguirte el beneficio lo antes posible. Solo necesito hacerte un par de preguntas rápidas.",
+          text: "¿Tienes más de 18 años?",
           sender: "bot",
-          options: ["¿Tienes más de 18 años?", "Sí, tengo más de 18 años"],
+          options: ["Sí, tengo más de 18 años", "No, tengo 17 años o menos"],
         },
       ];
     } else if (
-      option === "¿Tienes más de 18 años?" ||
-      option === "Sí, tengo más de 18 años"
+      option === "Sí, tengo más de 18 años" ||
+      option === "No, tengo 17 años o menos"
     ) {
       botResponses = [
         {
