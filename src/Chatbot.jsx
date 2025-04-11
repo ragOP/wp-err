@@ -92,14 +92,14 @@ export default function Chatbot() {
           sender: "bot",
         },
         {
-          text: "¿Tienes más de 18 años?",
+          text: "¡Genial! Vamos a conseguirte el beneficio lo antes posible. Solo necesito hacerte un par de preguntas rápidas.",
           sender: "bot",
-          options: ["Sí, tengo más de 18 años", "No, tengo 17 o menos"],
+          options: ["¿Tienes más de 18 años?", "Sí, tengo más de 18 años"],
         },
       ];
     } else if (
-      option === "Sí, tengo más de 18 años" ||
-      option === "No, tengo 17 o menos"
+      option === "¿Tienes más de 18 años?" ||
+      option === "Sí, tengo más de 18 años"
     ) {
       botResponses = [
         {
@@ -120,11 +120,11 @@ export default function Chatbot() {
     }else if (option === "Sí" || option === "No") {
       botResponses = [
         {
-          text: "🎉 ¡Fantásticas noticias! Estás a un paso de asegurar tu beneficio",
+          text: "🎉 ¡Fantásticas noticias! Estás a un paso de asegurar tu beneficio.",
           sender: "bot",
         },
         {
-          text: "¡Según lo que me has contado, eres elegible para el Plan de Seguro de Salud Gratis!",
+          text: "Según lo que me has contado, calificas para el Subsidio de Gastos de $5800.",
           sender: "bot",
         },
       ];
@@ -186,7 +186,7 @@ export default function Chatbot() {
         <div className="flex items-center justify-between w-full">
           <div>
             <div className="flex items-center gap-3">
-              <p className="font-bold text-sm">Plan Salud Gratis</p>
+              <p className="font-bold text-sm">Beneficios Prioritarios Org.</p>
               <img src={tick} className="w-4 h-4"  style={{marginLeft:"-6px"}}/>
             </div>
             <p className="text-sm ">online</p>
